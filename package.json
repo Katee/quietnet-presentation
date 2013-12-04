@@ -1,0 +1,18 @@
+{ "name": "quietnet-presentation"
+, "version": "0.0.1"
+, "engines": ["node >= 0.4.0"]
+, "main": "app.js"
+, "dependencies":
+  {
+   "express":          "~3.x"
+   ,"socket.io": "0.9.x"
+  },
+  "devDependencies":
+  { "nodeunit":         "*"
+  , "sinon":            "*"
+  , "semicov":          "*"
+  }
+, "scripts":
+  { "test": "nodeunit test/*/*"
+  }
+}

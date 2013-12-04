@@ -1,0 +1,249 @@
+body {
+  font-family: 'PT Sans', sans-serif;
+
+  background: #202020;
+  background: -webkit-radial-gradient(rgb(12, 12, 12), rgb(6, 6, 6));
+
+  color: #eee;
+  text-shadow: -1px -1px 2px rgba(0,0,0,0.9);
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 3px;
+}
+
+#slide-math svg g {
+  stroke: none;
+  fill: #eee;
+}
+
+b, strong { font-weight: bold }
+i, em { font-style: italic }
+
+a,
+a:hover,
+a:focus {
+  color: inherit;
+  text-decoration: none;
+}
+
+.step {
+  position: relative;
+  width: 100vw;
+  padding: 10vw 10vh;
+  margin: 0 auto;
+
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+
+  font-family: 'PT Serif', georgia, serif;
+  font-size: 3em;
+  line-height: 1.5;
+}
+
+.impress-enabled .step {
+  margin: 0;
+  opacity: 0.3;
+  -webkit-transition: opacity 1s;
+  transition:         opacity 1s;
+}
+
+.impress-enabled .step.active { opacity: 1 }
+
+.impress-on-overview .step {
+  opacity: 1;
+  cursor: pointer;
+}
+
+h2 {
+font-family: Georgia, serif;
+font-size: 1.5em;
+margin-bottom: 1em;
+}
+
+#slide-title {
+  padding: 0;
+  text-shadow: 0px 1px 5px #000;
+  text-align: center;
+}
+
+#slide-title h1 {
+  font-size: 4.5em;
+}
+
+#slide-title p {
+  font-size: .8em;
+}
+
+/* The title should disappear completely after it's gone */
+#slide-title.past {
+  margin: 0 !important;
+  opacity: 0 !important;
+  -webkit-transition: opacity 1s !important;
+  transition:         opacity 1s !important;
+}
+
+/* The title should disappear completely after it's gone */
+body.impress-on-slide-analyze-focus #slide-analyze {
+  opacity: 1 !important;
+  -webkit-transition: opacity 1s !important;
+  transition:         opacity 1s !important;
+}
+
+/* Don't want to show the graph label when zooming in */
+body.impress-on-slide-analyze-focus #slide-analyze .graph-axis-label.horizontal {
+  opacity: 0 !important;
+  -webkit-transition: opacity 1s !important;
+  transition:         opacity 1s !important;
+}
+body.impress-on-slide-fft-time #slide-analyze .graph-axis-label.horizontal {
+  opacity: 0 !important;
+}
+
+body.impress-on-slide-fft-time2 #slide-fft-time {
+  opacity: 1 !important;
+}
+
+#slide-math {
+  width: 15em;
+}
+
+#slide-closing {
+  text-align: center;
+}
+#slide-closing h1 {
+  font-size: 2em;
+}
+
+#slide-psk {
+  text-align: center;
+}
+#slide-psk input {
+  margin: 0 auto;
+  width: 8em;
+  font-size: 2em;
+  border-radius: .25em;
+  text-align: center;
+}
+#slide-psk input:focus {
+  outline: none;
+}
+
+.letterbitstream {
+  position: relative;
+}
+
+.letterbreak {
+  opacity: 0;
+  -webkit-transition: 2s;
+  transition:         2s;
+}
+
+.show-letter-breaks .letterbreak {
+  opacity: 1;
+  -webkit-transition: 2s;
+  transition:         2s;
+}
+
+.letterbitstream .letter {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  left: 0;
+  font-size: 2em;
+}
+
+.letterbitstream .code {
+  line-height: 3em;
+  opacity: 0;
+}
+
+.show-code .letterbitstream .letter {
+  opacity: 0;
+  -webkit-transition: 2s;
+  transition:         2s;
+}
+.show-code .letterbitstream .code {
+  opacity: 1;
+  -webkit-transition: 2s;
+  transition:         2s;
+}
+
+.step.slide-big-graph {
+  height: 80vh;
+  width: 85vw;
+  margin: 0;
+  margin-top: 0vh;
+  padding: 0;
+  display: block;
+}
+
+#slide-wave.step {
+  height: 100vh;
+  width: 100vw;
+}
+
+#slide-analyze-pretty.step {
+  height: 50vh;
+  width: 100vw;
+}
+
+#slide-psk {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+canvas, svg {
+  height: 100%;
+  width: 100%;
+}
+
+.fft-highlight {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 3px;
+  opacity: 0;
+}
+.show-highlight .fft-highlight {
+  opacity: 1;
+  -webkit-transition: 2s;
+  transition:         2s;
+  -webkit-transition-delay: 3s;
+  transition-delay: 3s;
+}
+
+.graph-axis-label {
+  display: block;
+}
+
+.graph-axis-label.horizontal {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: -1.2em;
+}
+
+.graph-axis-label.vertical {
+  position: absolute;
+  left: -2.5em;
+  -webkit-transform:rotate(-90deg);
+  text-align: center;
+  bottom: 45%;
+}
+
+#slide-closing {
+  opacity: 0 !important;
+}
+.impress-on-slide-closing #slide-closing {
+  opacity: 1 !important;
+}
+.impress-on-slide-closing #slide-title {
+  opacity: 0 !important;
+}
+.impress-on-silde-title #slide-title {
+  opacity: 1 !important;
+}
