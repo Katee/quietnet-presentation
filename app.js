@@ -18,12 +18,10 @@ io = require('socket.io').listen(server);
 var spawn = require('child_process').spawn,
 child;
 
-function startTone(pulsing){
+function startPulse(){
   stopAudio();
 
-  var command = pulsing ? 'slide6.py' : 'slide5.py';
-  // yeeeeeeeeeppp
-  child = spawn('python', [command], {cwd: '/Users/kate/Projects/quietnet/'});
+  child = spawn('python', ['pulse.py'], {cwd: './scripts/'});
   child.stdout.on('data', function(data){
     console.log(data.toString());
   });
@@ -40,7 +38,7 @@ function stopAudio() {
 
 function sendMessage(message){
   stopAudio();
-  child = spawn('python', ['send.py', message], {cwd: '/Users/kate/Projects/quietnet/'});
+  child = spawn('python', ['send.py', message], {cwd: './scripts/'});
 
   child.stdout.on('data', function(data){
     console.log(data.toString());
@@ -59,10 +57,10 @@ io.sockets.on('connection', function (socket) {
 
   socket.on('tone', function (data) {
     if (data.on === true) {
-      console.log('playing tone', data);
-      startTone(data.pulsing);
+      console.log('playing pulse', data);
+      startPulse();
     } else if (data.on === false) {
-      console.log('stopping tone');
+      console.log('stopping pulse');
       stopAudio();
     }
   });
